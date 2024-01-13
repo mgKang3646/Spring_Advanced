@@ -12,7 +12,8 @@ public class FieldLogTrace implements LogTrace{
     private static final String COMPLETE_PREFIX = "<--";
     private static final String EX_PREFIX = "<X-";
 
-    private TraceId traceIdHolder; // traceId 동기화 ( 파라미터로 넘기지 않는다. ) => 동시성 이슈 발생! ( 나중에 다루기 )
+    // traceId 동기화 ( 파라미터로 넘기지 않는다. ) => 동시성 이슈 발생! ( FiledLogTrace는 싱글톤 객체이기 때문에 동시성이슈가 발생한다. )
+    private TraceId traceIdHolder;
 
     @Override
     public TraceStatus begin(String message) {
