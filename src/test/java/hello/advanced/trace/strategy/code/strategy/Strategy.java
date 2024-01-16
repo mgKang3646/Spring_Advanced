@@ -1,4 +1,4 @@
-package hello.advanced.trace.strategy.code;
+package hello.advanced.trace.strategy.code.strategy;
 
 public interface Strategy {
 
